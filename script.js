@@ -16,7 +16,7 @@ const geniuses = [
 
   const fifteens =geniuses.filter( genius=>
     {return (genius.year >= 1500) &&  (genius.year <= 1599)}
-);
+).map((genius)=> `Name:  ${genius.first} ; year:  ${genius.year}`);
 let newFifteens= JSON.stringify(fifteens);
 
 const names = geniuses.map(genius=>`${genius.first} ${genius.last}`)
