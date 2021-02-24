@@ -19,10 +19,10 @@ const geniuses = [
 ).map((genius)=> `Name:  ${genius.first} ; year:  ${genius.year}`);
 let newFifteens= JSON.stringify(fifteens);
 
-const names = geniuses.map(genius=>`${genius.first} ${genius.last}`)
+const names = geniuses.map(genius=>`\n ${genius.first} ${genius.last} \n `)
 
 //sorted from oldest to youngest
-const sortedBirthdays = geniuses.sort((a,b)=>a.year>b.year?1:-1  );
+const sortedBirthdays = geniuses.sort((a,b)=>a.year>b.year?1:-1).map(genius=> `Name:  ${genius.first} ${genius.last}   year:  ${genius.died}-${genius.year}`);
 let newSortedBirthdays=  JSON.stringify(sortedBirthdays) 
 //console.log(sortedBirthdays);
 
@@ -36,7 +36,7 @@ const yearSort= geniuses.sort((a,b)=>{
 const prev= a.died-a.year;
 const curr= b.died-b.year;
 return prev>curr? 1: -1;
-})
+}).map((genius)=> `Name: ${genius.first} ${genius.last} ; year: ${genius.year}- ${genius.died}`)
 let newYearSort=  JSON.stringify(yearSort) 
 
 
